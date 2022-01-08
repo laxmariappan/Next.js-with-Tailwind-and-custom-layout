@@ -30,6 +30,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  console.log(params);
   const result = await fetch(
     `https://wordpress.org/news/wp-json/wp/v2/posts/?slug=${params.slug}`
   );
