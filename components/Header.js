@@ -28,7 +28,7 @@ const Header = () => {
           <div className="navbar-menu hidden lg:order-3 lg:block w-full lg:w-2/5 lg:text-right">
             <Link href="/">
               <a className="inline-block py-4 px-8 mr-6 leading-none text-white bg-indigo-600 hover:bg-indigo-700 font-semibold rounded shadow">
-                Home
+                News
               </a>
             </Link>
             <Link href="/about">
