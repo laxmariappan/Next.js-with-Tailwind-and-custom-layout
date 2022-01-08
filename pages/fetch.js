@@ -1,23 +1,24 @@
 import 'tailwindcss/tailwind.css';
+import Link from 'next/link';
 import Layout from '../components/Layout.js';
 const Fetch = ({ posts }) => {
   return (
     <>
       <Layout>
         <section className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center bg-blue-50">
-          <h1 className="text-6xl font-bold">
-            Welcome to{' '}
-            <a className="text-blue-600" href="https://nextjs.org">
-              Next.js!
-            </a>
-          </h1>
+          <h1 className="text-6xl font-bold">WordPress News</h1>
 
           <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full ">
             {posts &&
               posts.map((post) => (
-                <p key={post.id}>
-                  <a href={post.slug}>{post.title.rendered}</a>
-                </p>
+                <div
+                  key={post.id}
+                  className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600 bg-white"
+                >
+                  <Link href={`post/${post.slug}`}>
+                    <a href="#">{post.title.rendered}</a>
+                  </Link>
+                </div>
               ))}
           </div>
         </section>

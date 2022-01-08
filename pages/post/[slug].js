@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css';
-import Layout from '../components/Layout.js';
+import Layout from '../../components/Layout.js';
 const Post = ({ post }) => {
   return (
     <>
