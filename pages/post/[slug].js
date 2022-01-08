@@ -20,11 +20,12 @@ export default Post;
 export async function getStaticPaths() {
   const result = await fetch('https://wordpress.org/news/wp-json/wp/v2/posts');
   const posts = await result.json();
-
+  const paths = posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+  console.log(paths);
   return {
-    paths: posts.map((post) => ({
-      params: { slug: post.slug },
-    })),
+    paths: paths,
     fallback: false,
   };
 }
