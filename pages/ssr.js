@@ -29,9 +29,11 @@ const SSR = ({ posts }) => {
 
 export default SSR;
 
-export async function getServersideProps({context}) {
-  const limit = context.limit || 5
-  const result = await fetch(`https://wordpress.org/news/wp-json/wp/v2/posts?per_page=${limit}`);
+export async function getStaticProps({ context }) {
+  const limit = context.limit || 5;
+  const result = await fetch(
+    `https://wordpress.org/news/wp-json/wp/v2/posts?per_page=${limit}`
+  );
   const posts = await result.json();
   return {
     props: { posts },
