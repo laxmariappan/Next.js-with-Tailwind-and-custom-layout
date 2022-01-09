@@ -29,8 +29,8 @@ const SSR = ({ posts }) => {
 
 export default SSR;
 
-export async function getServerSideProps({ context }) {
-  const limit = context.limit || 5;
+export async function getServerSideProps(context) {
+  const limit = context.query.limit || 5;
   const result = await fetch(
     `https://wordpress.org/news/wp-json/wp/v2/posts?per_page=${limit}`
   );
